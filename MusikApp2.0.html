@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registrazione MusikApp</title>
+    <style>
+        /* Stile per allineare il contenuto a sinistra */
+        form {
+            text-align: left;
+            max-width: 400px; /* Larghezza massima del form per una migliore leggibilità */
+            margin: 20px auto; /* Centra il form orizzontalmente */
+        }
+    </style>
+</head>
+<body>
+
+<h2>Modulo di registrazione MusikApp</h2>
+
+<form action="/submit_registration" method="post">
+
+    <label for="fname">Nome:</label>
+    <input type="text" id="fname" name="fname" required><br><br>
+
+    <label for="lname">Cognome:</label>
+    <input type="text" id="lname" name="lname" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="username">Nome utente:</label>
+    <input type="text" id="username" name="username" required><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <label for="confirmpassword">Conferma Password:</label>
+    <input type="password" id="confirmpassword" name="confirmpassword" required><br><br>
+
+    <label for="dob">Data di nascita:</label>
+    <input type="date" id="dob" name="dob" required><br><br>
+
+    <label for="country">Paese:</label>
+    <select id="country" name="country">
+      <option value="italy">Italia</option>
+      <option value="usa">USA</option>
+      <!-- Altri paesi possono essere aggiunti qui -->
+    </select><br><br>
+
+    <input type="checkbox" id="terms" name="terms" required>
+    <label for="terms">Accetto i <a href="/terms_and_conditions">Termini e Condizioni</a></label><br><br>
+
+    <input type="checkbox" id="privacy" name="privacy" required>
+    <label for="privacy">Autorizzo il trattamento dei miei dati personali secondo la <a href="/privacy_policy">Privacy Policy</a></label><br><br>
+
+    <input type="submit" value="Registra">
+
+</form>
+
+</body>
+</html>
