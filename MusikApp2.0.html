@@ -3,57 +3,95 @@
 <head>
     <title>Registrazione MusikApp</title>
     <style>
-        /* Stile per allineare il contenuto a sinistra */
+        /* Stili generali */
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;  /* Imposta l'altezza al 100% della viewport */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;  /* Allinea tutto a sinistra */
+            padding-left: 20px;  /* Aggiungi un po' di spazio a sinistra per una migliore estetica */
+            justify-content: center;  /* Centra il contenuto verticalmente */
+        }
+
+        /* Stili per il form */
         form {
             text-align: left;
             max-width: 400px; /* Larghezza massima del form per una migliore leggibilità */
-            margin: 20px auto; /* Centra il form orizzontalmente */
+        }
+        /* Stili per i campi di input */
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        input[type="number"],
+        select {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
         }
     </style>
+    <script>
+        function showAlert() {
+            alert("Registrazione inviata!");
+        }
+    </script>
 </head>
 <body>
 
-<h2>Modulo di registrazione MusikApp</h2>
+<h2>Registrazione MusikApp</h2>
 
-<form action="/submit_registration" method="post">
+<form action="#" onsubmit="showAlert(); return false;">
 
     <label for="fname">Nome:</label>
-    <input type="text" id="fname" name="fname" required><br><br>
+    <input type="text" id="fname" name="fname" required>
 
     <label for="lname">Cognome:</label>
-    <input type="text" id="lname" name="lname" required><br><br>
+    <input type="text" id="lname" name="lname" required>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
-
-    <label for="username">Nome utente:</label>
-    <input type="text" id="username" name="username" required><br><br>
+    <label for="email">Indirizzo email:</label>
+    <input type="email" id="email" name="email" required>
 
     <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required><br><br>
-
-    <label for="confirmpassword">Conferma Password:</label>
-    <input type="password" id="confirmpassword" name="confirmpassword" required><br><br>
+    <input type="password" id="password" name="password" required>
 
     <label for="dob">Data di nascita:</label>
-    <input type="date" id="dob" name="dob" required><br><br>
+    <input type="date" id="dob" name="dob" required>
 
-    <label for="country">Paese:</label>
-    <select id="country" name="country">
-      <option value="italy">Italia</option>
-      <option value="usa">USA</option>
-      <!-- Altri paesi possono essere aggiunti qui -->
-    </select><br><br>
+    <label for="phone">Numero di telefono:</label>
+    <input type="number" id="phone" name="phone" required>
 
-    <input type="checkbox" id="terms" name="terms" required>
-    <label for="terms">Accetto i <a href="/terms_and_conditions">Termini e Condizioni</a></label><br><br>
+    <label>Gusti musicali:</label><br>
+    <input type="checkbox" id="rock" name="music_taste" value="rock">
+    <label for="rock">Rock</label><br>
 
-    <input type="checkbox" id="privacy" name="privacy" required>
-    <label for="privacy">Autorizzo il trattamento dei miei dati personali secondo la <a href="/privacy_policy">Privacy Policy</a></label><br><br>
+    <input type="checkbox" id="pop" name="music_taste" value="pop">
+    <label for="pop">Pop</label><br>
 
-    <input type="submit" value="Registra">
+    <input type="checkbox" id="jazz" name="music_taste" value="jazz">
+    <label for="jazz">Jazz</label><br>
+
+    <input type="checkbox" id="hiphop" name="music_taste" value="hiphop">
+    <label for="hiphop">Hip-hop</label><br>
+
+    <!-- ... altri gusti musicali ... -->
+
+    <label>Accettazione dei termini e condizioni:</label><br>
+    <input type="radio" id="accept" name="terms" value="accept" required>
+    <label for="accept">Accetto</label><br>
+
+    <input type="radio" id="decline" name="terms" value="decline" required>
+    <label for="decline">Non accetto</label><br><br>
+
+    <input type="submit" value="Invia registrazione">
 
 </form>
 
 </body>
 </html>
+
