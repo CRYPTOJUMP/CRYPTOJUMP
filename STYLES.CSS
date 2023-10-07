@@ -1,0 +1,148 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: beige;
+}
+
+.paint-card {
+    position: relative;
+    width: 500px;
+    height: 550px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    transition: box-shadow .2s;
+    color: white;
+    user-select: none;
+}
+
+.paint-card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(0deg, black 0%, transparent 10%);
+    z-index: 2;
+}
+
+.paint-card:hover {
+    box-shadow: none;
+}
+
+.paint-card_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+}
+
+.paint-card_info {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s, opacity 0.3s;
+    transform: translateX(0);
+    /* Posizione di default */
+    opacity: 1;
+}
+
+.paint-card_info_artist {
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.2em;
+}
+
+.paint-card_info_title {
+    margin-top: 8px;
+    font-size: 1.3em;
+    line-height: 1.5em;
+}
+
+/* Stile comune per tutti i pulsanti */
+.paint-card_button {
+    position: absolute;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, opacity 0.3s;
+    transform: translateY(100%);
+    /* This pushes the buttons below the card */
+    color: black;
+    opacity: 0;
+    /* Nascondi i pulsanti di default */
+}
+
+.paint-card_button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Pulsante 1 - Ovale lungo in basso a sinistra */
+.btn1 {
+    padding: 20px 30px;
+    border-radius: 25px;
+    bottom: 10px;
+    left: 10px;
+}
+
+/* Pulsante 2 - Rotondo con freccia, in basso a destra */
+.btn2 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    bottom: 10px;
+    right: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+}
+
+/* Pulsante 3 - Rotondo con tre puntini, in basso a destra */
+.btn3 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+}
+
+/* Pulsante 4 - Ovale lungo con sfondo rosso e testo "Save" */
+.btn4 {
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: red;
+    color: white;
+    top: 10px;
+    right: 10px;
+}
+
+/* Effetto hover */
+.paint-card:hover .paint-card_info {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.paint-card:hover .paint-card_button {
+    opacity: 1;
+    transform: translateY(0);
+    /* This resets the position of the buttons to their original place */
+    /* Mostra i pulsanti al hover */
+}
